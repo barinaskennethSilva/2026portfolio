@@ -1,14 +1,16 @@
+window.addEventListener('load', () => {
+  
+
 const player = document.getElementById('player');
 const btnleft = document.getElementById('btnleft');
 
-btnleft.addEventListener('click', ()=>{
-  alert('hello world');
-});
+let playerPos = 45;
 
-/*btnleft.addEventListener('touchstart', ()=>movePlayer(-5));
+btnleft.addEventListener('touchstart', ()=>movePlayer(-5));
 
 function movePlayer(amount){
-  if (gameOver) return;
+ /* if (gameOver) return;*/
   playerPos = Math.min(90, Math.max(0,playerPos + amount));
-  playerStyle.left = playerPos  + "%"
-}*/
+  player.style.left = playerPos  + "%"
+}
+});
