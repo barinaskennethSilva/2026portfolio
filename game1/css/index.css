@@ -1,10 +1,44 @@
-.players{
-  background-color: red;
-  height: 50px;
-  width:50px;
-  position: absolute;
+body {
+  margin: 0;
+  background: #111;
 }
-#btnleft{
+
+/* Game area */
+#gameArea {
+  position: relative;
+  height: 200px;
+  background: #222;
+}
+
+#player {
   position: absolute;
-  top:200;
+  bottom: 20px;
+  left: 45%;
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  border-radius: 8px;
+}
+
+/* Joystick base */
+#joystick {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  width: 120px;
+  height: 120px;
+  background: #1f1f1f;
+  border-radius: 50%;
+  touch-action: none;
+}
+
+/* Stick */
+#stick {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  width: 50px;
+  height: 50px;
+  background: #ccc;
+  border-radius: 50%;
 }
