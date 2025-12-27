@@ -9,6 +9,30 @@ window.addEventListener('load', () => {
   const center = 60; // joystick center
   const maxDistance = 40;
   const maxSpeed = 1.2;
+  //jump function
+  let Jump = -10;
+  let gravity = 0.5;
+  let velocity = 0;
+  let y = 0;
+  
+ document.getElementById('jump').addEventListener("click",function(){
+velocity = Jump;
+  });
+  function gameloop(){
+   velocity += gravity;
+   y+= velocity;
+   //ground collision
+   if(y > 0){
+     y = 0;
+     velocity = 0;
+   }
+  player.style.bottom =  -y + "px";
+  requestAnimationFrame(gameloop);
+  }
+  gameloop(); 
+/////////////////////////////////////  
+  
+  
   joystick.addEventListener('touchstart', () => {
     dragging = true;
   });

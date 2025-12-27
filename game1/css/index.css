@@ -42,3 +42,36 @@ body {
   background: #ccc;
   border-radius: 50%;
 }
+
+#jump{
+  position: fixed;
+  right:40px;
+  bottom: 120px;
+  width: 70px;
+  height: 70px;
+  background: #1f1f1f;
+  border-radius: 50%;
+  touch-action: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #fff;
+  font-weight:700;
+}
+#fire{
+  position: fixed;
+  right:40px;
+  bottom: 40px;
+  width: 70px;
+  height: 70px;
+  background: #1f1f1f;
+  border-radius: 50%;
+  touch-action: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #fff;
+  font-weight:700;
+}
