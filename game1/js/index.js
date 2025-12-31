@@ -14,9 +14,13 @@ window.addEventListener('load', () => {
   let gravity = 0.5;
   let velocity = 0;
   let y = 0;
-  
+  let moveDir = 0; // -1 = left, 1 = right, 0 = stop
+let speed = 0;
+
  document.getElementById('jump').addEventListener("click",function(){
-velocity = Jump;
+if (y === 0) { // prevent double jump
+    velocity = Jump;
+  }
   });
   function gameloop(){
    velocity += gravity;
@@ -26,7 +30,12 @@ velocity = Jump;
      y = 0;
      velocity = 0;
    }
-  player.style.bottom =  -y + "px";
+   player.style.bottom =  -y + "px";
+ //walik physics (walk while jumping)
+ playerPos += moveDir * speed;
+ playerPos = Math.min(90, Math.max(0, playerPos));
+ player.style.left = playerPos + "%";
+  
   requestAnimationFrame(gameloop);
   }
   gameloop(); 
@@ -34,31 +43,32 @@ velocity = Jump;
   
   
   joystick.addEventListener('touchstart', () => {
-    dragging = true;
-  });
+  dragging = true;
+});
 
-  joystick.addEventListener('touchmove', (e) => {
-    if (!dragging) return;
+joystick.addEventListener('touchmove', (e) => {
+  if (!dragging) return;
 
-    const touch = e.touches[0];
-    const rect = joystick.getBoundingClientRect();
+  const touch = e.touches[0];
+  const rect = joystick.getBoundingClientRect();
 
-    let x = touch.clientX - rect.left - center;
-    x = Math.max(-maxDistance, Math.min(maxDistance, x));
+  let x = touch.clientX - rect.left - center;
+  x = Math.max(-maxDistance, Math.min(maxDistance, x));
 
-    // move stick
-    stick.style.transform = `translateX(${x}px)`;
-//speed calculation
-const distance = Math.abs(x);
-const speed = (distance / maxDistance) * maxSpeed;
-const direction = Math.sign(x);
-playerPos += direction * speed;
+  stick.style.transform = `translateX(${x}px)`;
 
-    // move player
-    playerPos += x * 0.02;
-    playerPos = Math.min(90, Math.max(0, playerPos));
-    player.style.left = playerPos + "%";
-  });
+  const distance = Math.abs(x);
+  speed = (distance / maxDistance) * maxSpeed;
+  moveDir = Math.sign(x); // -1, 0, 1
+});
+
+joystick.addEventListener('touchend', () => {
+  dragging = false;
+  moveDir = 0;
+  speed = 0;
+  stick.style.transform = "translateX(0)";
+});
+
 
   joystick.addEventListener('touchend', () => {
     dragging = false;
