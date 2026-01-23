@@ -11,21 +11,27 @@ BLUE = (0, 0, 255)
 GRAY = (180,180,180)
 BLACK = (0, 0, 0)
 
-#box hero
+#prey
+prey = pygame.Rect(py = 50, px = 100, pw = 80, ph = 80)
+#box hunter
 y = 500
 x = 200
 width = 100
 height = 100
 vel = 20
+# coins/scoreboard
+GOLD = (225, 215, 0)
+score = 0
+coin_size = 10
 #bullet
 bullets = []
 bullet_speed = 10
 #button
-up_btn = pygame.Rect(150, 730, 100, 80)
-left_btn = pygame.Rect(50, 830, 100, 80)
-right_btn = pygame.Rect(250, 830, 100, 80)
+up_btn = pygame.Rect(150, 790, 100, 80)
+left_btn = pygame.Rect(50, 890, 100, 80)
+right_btn = pygame.Rect(250, 890, 100, 80)
 down_btn = pygame.Rect(150,1000,100,80)
-fire_btn = pygame.Rect(450,730,100,80)
+fire_btn = pygame.Rect(550,870,110,80)
 
 font = pygame.font.SysFont(None, 30)
 
@@ -34,6 +40,10 @@ clock = pygame.time.Clock()
 while run:
     clock.tick(60)
     win.fill(WHITE)
+    
+    #draw prey
+    pygame.draw.rect(win, BLACK,prey)
+    
     # Draw box
     pygame.draw.rect(win, BLUE, (x, y, width, height))
 
@@ -44,12 +54,12 @@ while run:
     pygame.draw.rect(win, GRAY, fire_btn)
     pygame.draw.rect(win,GRAY,down_btn)
 
-    win.blit(font.render("UP", True, BLACK),(185,765))
-    win.blit(font.render("LEFT", True, BLACK),(75, 895))
-    win.blit(font.render("RIGHT", True, BLACK),(265, 895))
+    win.blit(font.render("UP", True, BLACK),(185,825))
+    win.blit(font.render("LEFT", True, BLACK),(75, 920))
+    win.blit(font.render("RIGHT", True, BLACK),(265, 920))
     win.blit(font.render("DOWN",True,BLACK),(170,1030))
     
-    win.blit(font.render("Fire",True, BLACK),( 480,765))
+    win.blit(font.render("Fire",True, BLACK),( 590,895))
     for event in pygame.event.get():
           if event.type == pygame.QUIT:
               run = False
