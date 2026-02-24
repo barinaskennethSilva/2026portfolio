@@ -4,14 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="js/index.js"></script>
   <title>2026portfolio</title>
 </head>
 <body>
+  <style>
+    .likeView{
+      display: flex;
+      flex-direction: row;
+      float: right;
+      justify-content:center;
+      align-items: center;
+    }
+    .likeView i{
+      margin-left: 4px;
+    }
+    #numbView{
+      margin-left: 5px;
+    }
+  </style>
 <header>
   <h1>Kenneth</h1>
-  <p>laaya sa unemployed Wala na kwarta! 😢😢😂😹😂 </p>
+  <p>BSIT</p>
 </header>
 
 <section class="games">
@@ -22,7 +38,7 @@
       <img src="img/pw1.jpg" alt="Cyber Space War">
       <h3>ChatWeb</h3>
       <p>A chatbox website that allow user to send message in realtime.</p>
-      <span>Vuejs • PHP </span>
+      <span>Vuejs • PHP </span> <div class="likeView"><p id="numLike">10</p><i class="fa fa-thumbs-up"></i><p id="numbView">10</p><i class="fa fa-eye"></i></div>
       <a href="#" class="play-btn">View Documentation</a>
     </div>
 
@@ -56,7 +72,8 @@
       <img src="img/hunt.jpg" alt="Cyber Space War">
       <h3>Animal Hunting</h3>
       <p>Start hunt animals for coins.</p>
-      <span>Python</span>
+      <span>Python </span>
+      <div class="likeView"><p id="numLike">10</p><i class="fa fa-thumbs-up"></i><p id="numbView">10</p><i class="fa fa-eye"></i></div>
       <a href="#" class="play-btn">View Documentation</a>
     </div>
 
@@ -73,6 +90,7 @@
       <h3>PokeMo</h3>
       <p>Come and catch pokemon.</p>
       <span>Python</span>
+<div class="likeView"><p id="numLike">10</p><i class="fa fa-thumbs-up"></i><p id="numbView">10</p><i class="fa fa-eye"></i></div>
       <a href="#" class="play-btn">View Documentation</a>
     </div>
 
@@ -82,6 +100,28 @@
 <footer>
   <p>© 2025 Kenneth | Game Developer</p>
 </footer>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyD-LCfc8Pd0XUc8ydXGAvECCgf0zLTcUAM",
+    authDomain: "portfolioviews-b007c.firebaseapp.com",
+    projectId: "portfolioviews-b007c",
+    storageBucket: "portfolioviews-b007c.firebasestorage.app",
+    messagingSenderId: "870405078679",
+    appId: "1:870405078679:web:afc8b7b72389a0797e33d2",
+    measurementId: "G-WFHHSFRZE4"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
