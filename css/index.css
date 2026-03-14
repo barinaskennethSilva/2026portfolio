@@ -105,15 +105,24 @@ footer {
 }
 /* like and view */
     .likeView{
-      display: flex;
-      flex-direction: row;
+     display: flex;
+     flex-direction: row;
       float: right;
-      justify-content:center;
+     justify-content:center;
       align-items: center;
+      width:100px !important;
     }
-    .likeView i{
-      margin-left: 4px;
-    }
-    #numbView{
+    .likeView button{
+  display: flex;
+  align-items: center;
+  width:80px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  color: #94a3b8;
+}
+
+
+    #numbView, #numLike{
       margin-left: 5px;
     }

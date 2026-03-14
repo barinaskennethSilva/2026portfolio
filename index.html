@@ -54,7 +54,7 @@
       <img src="img/pw1.jpg" alt="Cyber Space War">
       <h3>ChatWeb</h3>
       <p>A chatbox website that allow user to send message in realtime.</p>
-      <span>Vuejs • PHP </span> <div class="likeView"><p id="numLike">10</p><i class="fa fa-thumbs-up"></i><p id="numbView">10</p><i class="fa fa-eye"></i></div>
+      <span>Vuejs • PHP </span> <div class="likeView"><button id="likeBtn"><i class="fa fa-thumbs-up"></i><p id="numLike">0</p></button><button id="likeBtn"><i class="fa fa-eye"></i><p id="numbView">0</p></button></div>
       <a href="#" class="play-btn">View Documentation</a>
     </div>
 
@@ -89,7 +89,7 @@
       <h3>Animal Hunting</h3>
       <p>Start hunt animals for coins.</p>
       <span>Python </span>
-      <div class="likeView"><p id="numLike">10</p><i class="fa fa-thumbs-up"></i><p id="numbView">10</p><i class="fa fa-eye"></i></div>
+      <div class="likeView"><button id="likeBtn"><i class="fa fa-thumbs-up"></i><p id="numLike">0</p></button><button id="likeBtn"><i class="fa fa-eye"></i><p id="numbView">0</p></button></div>
       <a href="#" class="play-btn">View Documentation</a>
     </div>
 
@@ -106,7 +106,7 @@
       <h3>PokeMo</h3>
       <p>Come and catch pokemon.</p>
       <span>Python</span>
-<div class="likeView"><p id="numLike">10</p><i class="fa fa-thumbs-up"></i><p id="numbView">10</p><i class="fa fa-eye"></i></div>
+      <div class="likeView"><button id="likeBtn"><i class="fa fa-thumbs-up"></i><p id="numLike">0</p></button><button id="likeBtn"><i class="fa fa-eye"></i><p id="numbView">0</p></button></div>
       <a href="#" class="play-btn">View Documentation</a>
     </div>
 
@@ -117,6 +117,14 @@
   <p>© 2025 Kenneth | Game Developer</p>
 </footer>
 <script type="module">
+let count = 0;
+const likeBtn = document.getElementById("likeBtn")
+
+likeBtn.addEventListener("click",function(){
+  count = count + 1;
+ document.getElementById("numLike").innerText = count;
+})
+
 /*document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     alert('Screenshot restricted!');
