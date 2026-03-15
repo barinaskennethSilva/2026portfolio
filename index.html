@@ -93,13 +93,7 @@
       <a href="#" class="play-btn">View Documentation</a>
     </div>
 
-    <!--div class="game-card">
-      <img src="img/im12.jpeg" alt="Snake & Ladder">
-      <h3>Mining</h3>
-      <p>Mining game with sound effects and scoring system.</p>
-      <span>JavaScript • Canvas</span>
-      <a href="#" class="play-btn">Play Game</a>
-    </div-->
+
 
     <div class="game-card">
       <img src="img/pokeMo.jpg" alt="Word Quiz">
@@ -117,40 +111,24 @@
   <p>© 2025 Kenneth | Game Developer</p>
 </footer>
 <script type="module">
-let count = 0;
+if (storedLike == null){
+  storedLike = 0;
+} 
+let like = localStorage.getItem("likedb");
+    document.getElementById("numLike").innerText = like;
+  
 const likeBtn = document.getElementById("likeBtn")
 
 likeBtn.addEventListener("click",function(){
-  count = count + 1;
- document.getElementById("numLike").innerText = count;
+  let storedLike = localStorage.getItem("likedb");
+
+  //count = count + 1;
+  storedLike = parseInt(storedLike) + 1;
+  localStorage.setItem("likedb",storedLike);
+  
 })
 
-/*document.addEventListener('visibilitychange', () => {
-  if (document.hidden) {
-    alert('Screenshot restricted!');
-  }
-});*/
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyD-LCfc8Pd0XUc8ydXGAvECCgf0zLTcUAM",
-    authDomain: "portfolioviews-b007c.firebaseapp.com",
-    projectId: "portfolioviews-b007c",
-    storageBucket: "portfolioviews-b007c.firebasestorage.app",
-    messagingSenderId: "870405078679",
-    appId: "1:870405078679:web:afc8b7b72389a0797e33d2",
-    measurementId: "G-WFHHSFRZE4"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
 </script>
 </body>
 </html>
