@@ -111,18 +111,18 @@
   <p>© 2025 Kenneth | Game Developer</p>
 </footer>
 <script type="module">
+let storedLike = localStorage.getItem("likedb");
+localStorage.removeItem("likedb");
 if (storedLike == null){
   storedLike = 0;
 } 
+document.getElementById("numLike").innerText = storedLike;
 let like = localStorage.getItem("likedb");
-    document.getElementById("numLike").innerText = like;
   
 const likeBtn = document.getElementById("likeBtn")
 
 likeBtn.addEventListener("click",function(){
-  let storedLike = localStorage.getItem("likedb");
-
-  //count = count + 1;
+  
   storedLike = parseInt(storedLike) + 1;
   localStorage.setItem("likedb",storedLike);
   
