@@ -49,37 +49,15 @@
 <section class="games">
   <h2>My Website</h2>
 
-  <div class="game-grid">
-    <div class="game-card">
-      <img src="img/pw1.jpg" alt="Cyber Space War">
-      <h3>ChatWeb</h3>
-      <p>A chatbox website that allow user to send message in realtime.</p>
-      <span>Vuejs • PHP </span> <div class="likeView"><button id="likeBtn"><i class="fa fa-thumbs-up"></i><p id="numLike">0</p></button><button id="likeBtn"><i class="fa fa-eye"></i><p id="numbView">0</p></button></div>
-      <a href="#" class="play-btn">View Documentation</a>
-    </div>
+  <div class="game-grid" id="output">
 
-    <!--div class="game-card">
-      <img src="img/im12.jpeg" alt="Snake & Ladder">
-      <h3>Mining</h3>
-      <p>Mining game with sound effects and scoring system.</p>
-      <span>JavaScript • Canvas</span>
-      <a href="#" class="play-btn">Play Game</a>
-    </div->
-
-    <div class="game-card">
-      <img src="img/im12.jpeg" alt="Word Quiz">
-      <h3>Racing</h3>
-      <p>Racing game with sound effects and scoring system.</p>
-      <span>HTML • JavaScript</span>
-      <a href="#" class="play-btn">Play Game</a>
-    </div-->
 
   </div>
 </section>
 
 
 
-<section class="games">
+<!--section class="games">
   <h2>My Games</h2>
 
   <div class="game-grid">
@@ -105,12 +83,20 @@
     </div>
 
   </div>
-</section>
+</section-->
 
 <footer>
   <p>© 2025 Kenneth | Game Developer</p>
 </footer>
 <script type="module">
+
+let project =[{"img":"img/pw1.jpg","name":"ChatWeb","techStock":"Vuejs,PHP","intro":"A chatbox website that allow user to send message in realtime."},{"img":"img/hunt.jpg","name":"Animal Hunting","techStock":"Python","intro":"Start hunt animals for coins."},{"img":"img/pokeMo.jpg","name":"pokeMo","techStock":"Python","intro":"Come and catch pokemon."}]
+const output = document.getElementById("output");
+project.forEach(function(project){
+output.innerHTML += `    <div class="game-card">      <img src='${project.img.trim()}'alt='${project.img}'><h3>${project.name}</h3><p>${project.intro}</p><span>${project.techStock}</span>      <div class="likeView"><button class="btnLike" ><i class="fa fa-thumbs-up"></i><p id="numLike">0</p></button><button ><i class="fa fa-eye"></i><p id="numbView">0</p></button></div>
+      <a href="#" class="play-btn">View Documentation</a></div>`;  
+});
+
 let storedLike = localStorage.getItem("likedb");
 //localStorage.removeItem("likedb");
 if (storedLike == null){
@@ -119,14 +105,15 @@ if (storedLike == null){
 document.getElementById("numLike").innerText = storedLike;
 let like = localStorage.getItem("likedb");
   
-const likeBtn = document.getElementById("likeBtn")
 
-likeBtn.addEventListener("click",function(){
-  
+document.querySelectorAll(".btnLike").forEach(btn=>{
+  btn.addEventListener("click",function(){
   storedLike = parseInt(storedLike) + 1;
-  localStorage.setItem("likedb",storedLike);
+  localStorage.setItem("likedb",storedLike);   
+  });
   
-})
+  });
+
 
 
 </script>
