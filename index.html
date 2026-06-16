@@ -7,45 +7,11 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <script src="js/index.js"></script>
+  <script type="module" src="js/index.js"></script>
   <title>2026portfolio</title>
 </head>
 <body>
-  <style>
-.prof{
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-}
 
-.cover-photo{
-  width: 100%;
-  height: 40vh;
-  object-fit: cover;
-}
-.profile-photo{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  object-fit: cover;
-  margin:auto;
-  display:block;
-  position:relative;
-  bottom:100px;
-  border:4px solid #0f172a;
-}
-  .btn-profile{
-  padding: 10px;
-  border-radius:5px;
-  outline: none;
-  cursor: pointer;
-  background-color: #111;
-  border:1px solid #0f172a;
-  font-weight: 700;
-  margin: 10px;
-  color: #38bdf8;
-    }
-  </style>
   <div class="prof">
     <img class="cover-photo" src="prof/cover.jpg" oncontextmenu="return false;">
  <img class="profile-photo" src="prof/cover.jpg" oncontextmenu="return false;">
@@ -55,9 +21,43 @@
   <h1>Kenneth Barinas</h1>
   <p>Available for Freelance</p>
   <p>Web Developer</p>
-     <button class="btn-profile">Technical Skills</button>
+   <button onclick="mySkillsFunc()"class="btn-profile">Technical Skills</button>
   <button class="btn-profile">Message Me</button>
 </header>
+
+<div class="skillset" id="skillsetId">
+<div class="skill-container">
+    <h3>Web Developer</h3>
+ <div class="row-skill">
+   <div>HTML</div>
+<div>CSS</div>
+<div>Boostrap5</div>
+ </div>
+  <div class="row-skill">
+<div>JavaScript</div>
+<div>PHP</div>
+<div>Laravel10</div>
+</div>
+  <div class="row-skill">
+<div>Vuejs 3</div>
+<div>Django</div>
+<div>Github</div>
+</div>
+</div>
+<div class="skill-container">
+  <h3>Photo Editing</h3>
+   <div class="row-skill">
+   <div>Canva</div>
+</div>     
+</div> 
+<div class="skill-container">
+  <h3>Data Analyst</h3>
+   <div class="row-skill">
+   <div>Excel</div>
+</div>     
+</div> 
+</div>
+
 
 <section class="games">
   <h2>My Project</h2>
@@ -69,37 +69,7 @@
 
 
 <footer>
-  <p>© 2025 Kenneth | Game Developer</p>
+  <p>© 2025 Kenneth | Web Developer</p>
 </footer>
-<script type="module">
-
-let project =[{"img":"img/ChicksGPT.jpg","name":"ChicksGPT","techStock":"html,Django","intro":"ChicksGPT is a prototype artificial intelligence system developed using a Transformer architecture.","link":"https://github.com/barinaskennethSilva/ADA_WONG_AI"},{"img":"img/pw1.jpg","name":"ChatWeb","techStock":"Vuejs,PHP","intro":"A chatbox website that allow user to send message in realtime."},{"img":"img/hunt.jpg","name":"Animal Hunting","techStock":"Python","intro":"Start hunt animals for coins."},{"img":"img/pokeMo.jpg","name":"pokeMo","techStock":"Python","intro":"Come and catch pokemon.","link":"https://github.com/barinaskennethSilva/Pokemo"}]
-const output = document.getElementById("output");
-project.forEach(function(project){
-output.innerHTML += `  <div class="game-card">      <img src='${project.img.trim()}'alt='${project.img}'><h3>${project.name}</h3><p>${project.intro}</p><span>${project.techStock}</span>      <div class="likeView"><button class="btnLike" data-btnprog_name='${project.name}'><i class="fa fa-thumbs-up"></i><p class="likeVal" id="like-${project.name}">0</p></button><button ><i class="fa fa-eye"></i><p id="numbView">0</p></button></div>
-      <a href='${project.link}' class="play-btn">View Documentation</a></div>`;  
-});
-
-
-const btnLike = document.querySelectorAll(".btnLike");
- 
-btnLike.forEach(button => {
-  const project = button.dataset.btnprog_name;
-
-  let likes = parseInt(localStorage.getItem(project)) || 0;
-//localStorage.removeItem(project);
-  const likeDisplay = document.getElementById(`like-${project}`);
-  likeDisplay.textContent = likes;
-
-  button.addEventListener("click", () => {
-    likes++;
-    localStorage.setItem(project, likes);
-    likeDisplay.textContent = likes;
-    
-  });
-});
-
-
-</script>
 </body>
 </html>
