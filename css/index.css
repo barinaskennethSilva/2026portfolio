@@ -182,3 +182,13 @@ footer {
     #numbView, .likeVal{
       margin-left: 5px !important;
   }
+ /* Desktop mode in mobile*/
+ @media only screen and (min-width: 1024px) {
+  .game-card img {
+    width: 100%;
+    height: 180px; 
+    object-fit: contain; 
+    object-position: center; 
+    border-radius: 8px;
+  }
+  }
