@@ -139,7 +139,7 @@ h3{
 /* Play Button */
 .play-btn {
   display: block;
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
@@ -169,19 +169,24 @@ footer {
      justify-content:center;
       align-items: center;
       width:100px !important;
+      margin-right: 15px;
     }
     .likeView button{
   display: flex;
   align-items: center;
   width:80px;
   height: 40px;
-  background-color: transparent;
   border: none;
-  color: #94a3b8;
+  background-color: #111;
+  border:1px solid #0f172a;
+  color: #38bdf8;
+  border-radius: 10px;
+  margin: 0px 0px 0 10px;
+  padding: 5px;
 }
     #numbView, .likeVal{
       margin-left: 5px !important;
-  }
+    }
  /* Desktop mode in mobile*/
  @media only screen and (min-width: 1024px) {
   .game-card img {
@@ -191,4 +196,5 @@ footer {
     object-position: center; 
     border-radius: 8px;
   }
-  }
+}
+
