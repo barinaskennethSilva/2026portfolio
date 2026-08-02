@@ -1,3 +1,19 @@
+/*scrollimg function*/
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+      }
+    });
+  },{
+      treshold:0.15,
+      rootMargin: "0px 0px -50px 0px"
+    });
+  const hiddenElements = document.querySelectorAll('.myheader');
+hiddenElements.forEach((el)=>
+  observer.observe(el));
+  
 window.mySkillsFunc = function(){
   const skillsetId = document.getElementById('skillsetId');
   if(getComputedStyle(skillsetId).display === "none"){
@@ -32,3 +48,4 @@ btnLike.forEach(button => {
     
   });
 });
+	
