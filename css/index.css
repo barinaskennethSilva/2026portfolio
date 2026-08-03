@@ -81,6 +81,12 @@ header{
   padding: 10px;
   display:none;
 }
+  .skill-icon,.skill-icon1{
+  background-color: #111;
+  text-align: center;
+  padding: 5px;
+  border-radius:10px;
+  }
 .row-skill{
   display:flex;
   flex-direction: row;
