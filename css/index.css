@@ -261,9 +261,220 @@ header{
   width:60%;
   text-align:center;
   padding:20px;
+  
 }
 .header-info h1{
   font-size:2.4rem;
+  color: #38bdf8;
+  line-height: 35px;
 }
-                    }
+.header-info p {
+  font-size:1.4rem;
+  color: #94a3b8;
+  margin-top:10px;
+}
+  .btn-holder{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content:center;
+    margin-top: 10px;
+  }  
+      .btn-holder button{
+      padding: 10px;
+      outline: none;
+        cursor: pointer;
+  background-color: #111;
+  border:1px solid #0f172a;
+      color: #38bdf8;
+      font-weight: 700;
+      border-radius: 10px;
+      border:none;
+      font-size: 1.0rem;
+    }
+    /*Skillset*/
+    .skillset{
+      margin-top:20px;
+      padding:20px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+    .skill-container{
+      background-color:#111;
+      border-radius:10px;
+      display:flex;
+      flex-direction:column;
+      margin-top:10px;
+      text-align:center;
+      justify-content: center;
+      align-items: center;
+      width:50%;
+    }
+    .skill-icon,.skill-icon1{
+      background-color: #000;
+      font-size: 2.9rem;
+      width:80px;
+      height: 80px;
+      border-radius: 50%;
+      position: relative;
+      bottom:20px;
+    }
+    .skill-icon1{
+      bottom: 90px;
+    }
+    .row-skill{
+      padding:10px;
+      font-size:1.5rem;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+   .row-skill div{
+     padding: 5px;
+     background-color: #000;
+     border-radius: 5px;
+   }
+   /* project Section */
+  .project-container {
+    max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  }
+  .project-container h2{
+    text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  
+  }
+    .proj-grid{
+    width:100%;
+    margin-top: 60px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap: 10px;
+  }
+   .proj-card{
+     width: 100%;
+     background-color: rgba(255,255,255,0.05);
+     border-radius: 10px;
+     margin-top:60px ;
+     padding: 5px;
+     backdrop-filter: blur(10px);
+  transition: 0.3s;
+  display: block;
+   }
+   .proj-card:hover{
+     transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.3);
+   }
+   .img-container{
+     display: flex;
+     flex-direction: row;
+   }
+  .proj-card .mobile-view{
+    width: 50%;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    bottom: 60px;
+    border:2px solid rgba(255,255,255,0.05);
+    display: block;
+  }
+    .proj-card .desktop-view{
+     width: 50%;
+    height: 180px; 
+    display: block;
+    }
+  .prof-title{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    position: relative;
+    bottom: 30px;
+    text-align: center;
+    justify-content:space-between;
+  }
+  .prof-title  h3{
+  margin-left:20px;
+  white-space: pre-wrap;
+  text-wrap:replace("FirstSecond" "First Second\n") ;
+}
+  .proj-status{
+    background-color: rgb(210,164,0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(225,225,225,0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+    padding: 5px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+    .proj-card p {
+     font-size: 0.9rem;
+  color: #cbd5f5;
+  margin: 10px 0; 
+    }
+  .proj-card span {
+  font-size: 0.8rem;
+  color: #38bdf8;
+}
+/* Play Button */
+.play-btn {
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.play-btn:hover {
+  opacity: 0.8;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+/* like and view */
+    .likeView{
+     display: flex;
+     flex-direction: row;
+      float: right;
+     justify-content:center;
+      align-items: center;
+      width:100px !important;
+      margin-right: 15px;
+    }
+    .likeView button{
+  display: flex;
+  align-items: center;
+  width:80px;
+  height: 40px;
+  border: none;
+  background-color: #111;
+  border:1px solid #0f172a;
+  color: #38bdf8;
+  border-radius: 10px;
+  margin: 0px 0px 0 10px;
+  padding: 5px;
+}
+    #numbView, .likeVal{
+      margin-left: 5px !important;
+    }
+  }
     
