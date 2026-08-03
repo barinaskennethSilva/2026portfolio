@@ -229,7 +229,7 @@ footer {
       margin-left: 5px !important;
     }
 }
-@media (max-width:1024px){
+@media (min-width:980px){
 * {
   margin: 0;
   padding: 0;
@@ -249,5 +249,21 @@ body {
   color: #fff;
   margin-bottom: 40px;
 }
+header{
+  display:flex;
+  flex-direction:row-reverse;
+  background-color:#111;
 }
-
+.profile-photo{
+  width:40%;
+}
+.header-info{
+  width:60%;
+  text-align:center;
+  padding:20px;
+}
+.header-info h1{
+  font-size:2.4rem;
+}
+                    }
+    
